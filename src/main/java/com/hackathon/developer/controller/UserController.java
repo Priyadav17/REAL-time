@@ -25,7 +25,7 @@ public class UserController {
 
 
     @DeleteMapping
-    public ResponseEntity<?> deleteUserByUserName() {
+    public ResponseEntity<?> deleteUserByUserName() {            //Delete
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String userName = authentication.getName();
         userRepository.deleteByUsername(userName);
@@ -34,7 +34,7 @@ public class UserController {
 
 
     @PutMapping
-    public ResponseEntity<?> updatebyid(@RequestBody User user) {
+    public ResponseEntity<?> updatebyid(@RequestBody User user) {           //put
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String userName = authentication.getName();
         Optional<User> userInDB = Optional.ofNullable(userServices.findByUsername(userName));
